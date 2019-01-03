@@ -14,7 +14,7 @@ All of my scripts are written in python version 3.
 5. Clone Netmiko from Git Bash Window (https://github.com/ktbyers/netmiko)
 6. Change directory to netmiko ("cd netmiko")
 7. Run  python setup.py install from Git Bash Window ("python setup.py")
-8. Check on Python console to confirm the availabilty of paramiko and netmiko libraryresult with following commands:
+8. Check on Python console to confirm the availabilty of paramiko and netmiko libraryresult with following commands
     a. python
     b. import paramiko
     c. import netmiko
