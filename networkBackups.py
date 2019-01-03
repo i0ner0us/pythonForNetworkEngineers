@@ -23,8 +23,6 @@ def switchBackups():
             'password': 'password' ,
             'secret': 'secret',
         } 
-
-        print("+++++++++++++ Performing Switch Backup +++++++++++++\n")
         
         ## Define Variables
         try:
@@ -52,14 +50,12 @@ def switchBackups():
 def nxosBackups():
     for line in nxos_switches:
         cisco_switch = {
-            'device_type': 'cisco_nxos', ## use cisco_ios for Catalyst Devices
+            'device_type': 'cisco_nxos', 
             'ip': line.strip(),
             'username': 'username',
             'password': 'password' ,
             'secret': 'secret',
         } 
-
-        print("+++++++++++++ Performing Switch Backup +++++++++++++\n")
         
         ## Define Variables
         try:
@@ -87,14 +83,12 @@ def nxosBackups():
 def routerBackups():
     for line in ios_routers:
         cisco_router = {
-            'device_type': 'cisco_ios', ## use cisco_ios for Catalyst Devices
+            'device_type': 'cisco_ios', 
             'ip': line.strip(),
             'username': 'username',
             'password': 'password' ,
             'secret': 'secret',
         } 
-
-        print("+++++++++++++ Performing Switch Backup +++++++++++++\n")
         
         ## Define Variables
         try:
@@ -119,8 +113,11 @@ def routerBackups():
         if not net_connect:
             net_connect.disconnect()
 
+print("+++++++++++++ Performing Cisco IOS Backups +++++++++++++\n")
 switchBackups()
+print("+++++++++++++ Performing Cisco NX-OS Backups +++++++++++++\n")
 nxosBackups()
+print("+++++++++++++ Performing Cisco Router Backups +++++++++++++\n")
 routerBackups()
 
 exit()
