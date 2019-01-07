@@ -2,14 +2,6 @@ from netmiko import ConnectHandler
 from netmiko.ssh_exception import NetMikoTimeoutException
 from netmiko.ssh_exception import NetMikoAuthenticationException
 
-"""
-Modify the below script to include the correct username, password, and enable secreat on all 3 device types.
-Make sure that you include all of the ip addresses of each device in each of the below files
-    iosSwitches.txt
-    nxosSwitches.txt
-    iosRouters.txt
-"""
-
 ios_switches = open('iosSwitches.txt')
 nxos_switches = open('nxosSwitches.txt')
 ios_routers = open('iosRouters.txt')
@@ -22,8 +14,8 @@ def switchBackups():
             'username': 'username',
             'password': 'password' ,
             'secret': 'secret',
-        } 
-        
+        }
+
         ## Define Variables
         try:
             net_connect = ConnectHandler(**cisco_switch)
@@ -50,13 +42,13 @@ def switchBackups():
 def nxosBackups():
     for line in nxos_switches:
         cisco_switch = {
-            'device_type': 'cisco_nxos', 
+            'device_type': 'cisco_nxos',
             'ip': line.strip(),
             'username': 'username',
             'password': 'password' ,
             'secret': 'secret',
-        } 
-        
+        }
+
         ## Define Variables
         try:
             net_connect = ConnectHandler(**cisco_switch)
@@ -83,13 +75,13 @@ def nxosBackups():
 def routerBackups():
     for line in ios_routers:
         cisco_router = {
-            'device_type': 'cisco_ios', 
+            'device_type': 'cisco_ios',
             'ip': line.strip(),
             'username': 'username',
             'password': 'password' ,
             'secret': 'secret',
-        } 
-        
+        }
+
         ## Define Variables
         try:
             net_connect = ConnectHandler(**cisco_router)
@@ -113,9 +105,9 @@ def routerBackups():
         if not net_connect:
             net_connect.disconnect()
 
-print("+++++++++++++ Performing Cisco IOS Backups +++++++++++++\n")
+print("+++++++++++++ Performing Cisco IOS Switch Backups +++++++++++++\n")
 switchBackups()
-print("+++++++++++++ Performing Cisco NX-OS Backups +++++++++++++\n")
+print("+++++++++++++ Performing Cisco NX-OS Switch Backups +++++++++++++\n")
 nxosBackups()
 print("+++++++++++++ Performing Cisco Router Backups +++++++++++++\n")
 routerBackups()
