@@ -1,0 +1,8 @@
+Value interface (\w+\d+\/\d+\/\d+)
+Value allowed_vlans (.*)
+
+Start
+  ^Port\s+Vlans allowed and active in management domain -> GetTrunks
+
+GetTrunks
+  ^${interface}\s+${allowed_vlans} -> Record

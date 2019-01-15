@@ -1,0 +1,6 @@
+Value interface (.*)
+Value link_status (.*)
+
+Start
+  ^Name:\s${interface}
+  ^Operational\sMode:\s${link_status} -> Record
