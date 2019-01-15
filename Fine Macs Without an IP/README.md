@@ -1,9 +1,8 @@
 # Finding Mac Addresses Without an IP on One switch
 ## Understanding the code
-=====
 
 #### Understanding the Syntax
-=====
+
 You can run the script [arp.py](./arp.py) with the following syntax
 
 ```
