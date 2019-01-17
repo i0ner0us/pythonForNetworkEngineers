@@ -91,7 +91,7 @@ def show_ip_arp(ip, username, password, enable_secret, mac_list):
 
     return arp_results
 
-def main():
+if __name__ == "__main__":
     '''
     get a list of all access port
     run show mac on every access port
@@ -136,6 +136,3 @@ def main():
         print('The following mac addresses do not show up in the arp table: \n\n' + str(invalid_arps) + '\n\n')
     else:
         print('The script ran successfully and did not find any issues!!\n\n')
-
-main()
-exit()
