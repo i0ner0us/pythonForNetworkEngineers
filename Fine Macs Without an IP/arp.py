@@ -130,7 +130,7 @@ if __name__ == "__main__":
 
     for mac in mac_list.split('\n'):
         if mac not in arp_results:
-            invalid_arps += mac
+            invalid_arps += mac + ('\n')
 
     if invalid_arps:
         print('The following mac addresses do not show up in the arp table: \n\n' + str(invalid_arps) + '\n\n')
