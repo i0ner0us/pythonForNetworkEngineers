@@ -135,4 +135,4 @@ if __name__ == "__main__":
     if invalid_arps:
         print('The following mac addresses do not show up in the arp table: \n\n' + str(invalid_arps) + '\n\n')
     else:
-        print('The script ran successfully and did not find any issues!!\n\n')
+        print('The script ran successfully and did not find any issues!!\n')
