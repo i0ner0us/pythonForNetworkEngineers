@@ -103,7 +103,7 @@ if __name__ == "__main__":
     username = sys.argv[2]
     password = getpass.getpass()
     enable_secret = getpass.getpass()
-    default_gateway = sys.argv[5]
+    default_gateway = sys.argv[3]
 
     print('Gathering required data please wait... ')
 
