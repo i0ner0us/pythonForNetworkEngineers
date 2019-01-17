@@ -101,8 +101,8 @@ if __name__ == "__main__":
     # set variables
     ip = sys.argv[1]
     username = sys.argv[2]
-    password = sys.argv[3]
-    enable_secret = sys.argv[4]
+    password = getpass.getpass()
+    enable_secret = getpass.getpass()
     default_gateway = sys.argv[5]
 
     print('Gathering required data please wait... ')
